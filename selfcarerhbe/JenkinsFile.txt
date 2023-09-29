@@ -1,0 +1,65 @@
+pipeline {
+	agent {
+		label 'test-automation'
+	}
+
+	stages {
+			
+		// Process Smoke tests
+		stage('Execute BE Tests') 
+		{
+			steps
+			{
+				catchError(buildResult: 'FAILURE', stageResult: 'FAILURE')	
+				{ 
+					sh 'docker run  -v ${PWD}:/etc/newman -t registry.tools.orange-sonatel.com/newman-test-api run SRH.postman_collection.json --insecure -e SRH_PREPROD.postman_environment.json  --reporters cli,htmlextra --reporter-htmlextra-export "newman/report.html" '
+				}
+			}
+		}
+		stage("publish Smoke Tests ")
+		{
+			steps
+			{
+			sh 'mkdir -p /opt/apps/reports/api/SRH_BE/${BUILD_NUMBER}/'
+			sh 'cp /datas/jenkins/docker-builder/workspace/Testing_SelfcareRH_Alpha_main/newman/report.html  /opt/apps/reports/api/SRH_BE/${BUILD_NUMBER}/'       
+			}
+		}
+		stage('Proccess BE Results') 
+		{
+			steps {
+				publishHTML target: [
+				allowMissing: false,
+				alwaysLinkToLastBuild: false,
+				keepAll: true,
+				reportDir: 'newman',
+				reportFiles: 'report.html',
+				reportName: 'Newman HTML Reporter'
+				]
+
+			}
+		}
+	
+	}
+	post {
+		always {
+				archiveArtifacts  artifacts:  'newman/report.html'
+				}
+		success {
+			mail to: "diambal.thiaw1@orange-sonatel.com,mouhamadou.seye@orange-sonatel.com,ext_fall.kouna@orange-sonatel.com,madiagne.sylla@orange-sonatel.com,PapaIdrissa.SYLLA@orange-sonatel.com", subject: "Succès Pipeline: ${currentBuild.fullDisplayName}",
+			//mail to: "diambal.thiaw1@orange-sonatel.com,mouhamadou.seye@orange-sonatel.com", subject: "Succès Pipeline: ${currentBuild.fullDisplayName}",
+			//mail to: "ext_awa.sall@orange-sonatel.com,ousseynou.sane@orange-sonatel.com, ext_fall.kouna@orange-sonatel.com,Team.api-management@orange-sonatel.com,Moussa.WADE@orange-sonatel.com,CheikhMohamethAbdouKarim.NDIAYE@orange-sonatel.com,PapaIdrissa.SYLLA@orange-sonatel.com,NafissatouCerif.NIANG@orange-sonatel.com,DiomYero.SOW@orange-sonatel.com, ElimaneBoubacar.Kane@orange-sonatel.com,amadouboubacar.sy@orange-sonatel.com,ndiaga.gueye@orange-sonatel.com", subject: "Succès Pipeline: ${currentBuild.fullDisplayName}",
+			body: """
+				Rapport de Test sur  SRH_BE : http://10.137.19.15/api/SRH_BE/${BUILD_NUMBER}/report.html
+				"""
+		}
+		failure{
+			mail to: "diambal.thiaw1@orange-sonatel.com,mouhamadou.seye@orange-sonatel.com", subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+			body: """
+
+			Rapport de Test sur SRH_BE : http://10.137.19.15/api/SRH_BE/${BUILD_NUMBER}/report.html
+			"""
+
+		}
+	
+	}
+}
