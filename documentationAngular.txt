@@ -1,0 +1,115 @@
+lien zeplin: https://app.zeplin.io/project/64b06495dd292321c688362d/screen/64b06f742af5351e5ba28283
+
+500+=probléme serveur
+400+=probléme client
+200+=0k
+
+authentification VPN 
+Login VPN : tmp_osn_thiaw74106
+Password : H3kj@qNx
+ 
+http://jira.tools.orange-sonatel.com/secure/RapidBoard.jspa?rapidView=4
+46&projectKey=SRH&view=planning.nodetail&selectedIssue=SRH-1010&version
+s=visible&epics=visible&selectedVersion=13235
+
+matricule sonatel Diambal Thiaw 
+TMP_THIAW74106
+cZw7ce2K
+
+creation proj: ng new nomApp
+demarrage: ng serve
+creation composant: ng generate component nomComposant ou ng g c nomComposant
+npm install --save angular-webstorage-service
+beining: le fait de faire une correspondance entre une variable qui est dans 
+js et une autre qui est dans html.
+lien angular:https://www.youtube.com/watch?v=jLA2vBkJU-s
+
+startuplab
+RN5S73
+
+arona.niang@orange-sonatel.com
+
+lien deploiement jenkins: 10.137.16.67:8011
+
+http://git.tools.orange-sonatel.com/scm/ses/frontend.git
+introduction:
+
+il y' 3 services en angular: 
+-un sevice pour l'application: @injecteur racine 'root'
+-un service o niveau d'un module: on modifie l'injecteur racine on supprime le root et dans 
+le module on met un providers : nom[] et on met dans le tableay tous nos element
+-un service o niveau des composents: dans @component on met un providers: nom[]
+
+784445633
+node_modules: contient tous les dependances de notre projet
+src: 
+app: on a le code source
+app-routing: là ou on met les routes
+
+simon dieny: https://www.youtube.com/watch?v=DTIYVffhJuU
+
+---------------------------------------------------------
+SELFCARE_RH
+---------------------------------------------------------
+test_selfcarerh4
+b6Ctmh8k
+https://selfcarerh-dev.apps.malaaw-rec.orange-sonatel.com/login?returnUrl=%2F
+
+http://selfcarerh-dev.apps.malaaw-rec.orange-sonatel.com/
+test_selfcarerh4
+b6Ctmh8k
+
+778531911
+
+Le lien pour l'accès aux BDD selfcarerh :
+https://phpmyadmin-dsitoolchainsharedservices.apps.malaaw-rec.orange-sonatel.com/
+
+serveur: mysql-rec.dsitoolchainsharedservices.svc.cluster.local:3306
+user: cicd
+password: Lvfbt2b!
+
+
+EN JAVASCRIPT CHAK FICHIER EST UN MODULE 
+
+lien teams:
+teams: mdp: aminateams2112
+
+http://jira.tools.orange-sonatel.com/secure/RapidBoard.jspa?projectKey=DSS&rapidView=520&view=planning
+-----------------------------------------------------------
+MEDIASTORE
+-----------------------------------------------------------
+partenaire: cerv et cisse
+Orange@123
+frontend-dstmediastore-rec.apps.malaaw-rec.orange-sonatel.com
+user : oms
+pwd : ms_pma@s2m
+http://10.137.16.67/phpMyAdmin/index.php
+
+-----------------------------------------------------------
+Portail developpeur:
+-----------------------------------------------------------
+epic link: 
+console jaune 
+forum rouge
+documentation bleu
+
+•	Lien écrans
+https://scene.zeplin.io/project/63590183abf35b31ced34dba
+
+Lien projet sur Jira: 
+•	http://jira.tools.orange-sonatel.com/secure/RapidBoard.jspa?projectKey=DSS&r
+apidView=520&view=planning
+
+•	daily Portail developpeur: 10h-10h30
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGFmZWE5NDgtZGE4Yi00Z
+jM5LThhOWYtOTE1MWU4NmI5ZTUw%40thread.v2/0?context=%7b%22Tid%22%3a%22c1d47378
+-a976-412f-946f-f443471c31d8%22%2c%22Oid%22%3a%22e79ff450-a8ac-4206-93bb-839
+1fa1b46bc%22%7d
+
+
+API Management: 
+•	Heure Daily: 10h30 - 11h00 (je n'arrive pas à copier le lien sur teams, 
+rapproche toi de Samantha)
+•	Lien projet sur Jira : http://jira.tools.orange-sonatel.com/secure/Rap
+idBoard.jspa?rapidView=212&projectKey=API&view=planning&selectedIssue=API-3013
+	
